@@ -7,7 +7,7 @@ import shutil
 import subprocess
 from ffmpeg import Ffmpeg
 
-CONF_FILE_PATH = '.\\config.json'
+CONF_FILE_PATH = '..\\config.json'
 
 def read_config(path):
     with open(path, 'r') as config:

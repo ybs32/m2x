@@ -1,21 +1,21 @@
 {
   "dirs": {
-    "input": ".\\res\\input",
-    "output": ".\\res\\output",
-    "tmp": ".\\res\\tmp",
-    "audio": ".\\res\\tmp\\audio",
-    "img_in": ".\\res\\tmp\\img_in",
-    "img_out": ".\\res\\tmp\\img_out"
+    "input": "..\\res\\input",
+    "output": "..\\res\\output",
+    "tmp": "..\\res\\tmp",
+    "audio": "..\\res\\tmp\\audio",
+    "img_in": "..\\res\\tmp\\img_in",
+    "img_out": "..\\res\\tmp\\img_out"
   },
   "waifu2x": {
-    "path": ".\\libs\\waifu2x\\waifu2x.exe",
-    "--model-dir": ".\\libs\\waifu2x\\models",
+    "path": "..\\libs\\waifu2x\\waifu2x.exe",
+    "--model-dir": "..\\libs\\waifu2x\\models",
     "--mode": "noise-scale",
     "--noise-level": 2,
     "--scale-ratio": 2
   },
   "ffmpeg": {
-    "path": ".\\libs\\ffmpeg\\bin\\ffmpeg.exe",
+    "path": "..\\libs\\ffmpeg\\bin\\ffmpeg.exe",
     "movie_to_image": {
       "-f": "image2",
       "-vcodec": "mjpeg",
