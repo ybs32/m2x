@@ -1,5 +1,5 @@
 {
-  "dir": {
+  "dirs": {
     "input": ".\\res\\input",
     "output": ".\\res\\output",
     "tmp": ".\\res\\tmp",
