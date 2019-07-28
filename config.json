@@ -16,14 +16,14 @@
   },
   "ffmpeg": {
     "path": "..\\libs\\ffmpeg\\bin\\ffmpeg.exe",
-    "movie_to_image": {
+    "movie_to_images": {
       "-f": "image2",
       "-vcodec": "mjpeg",
       "-qscale": 1,
       "-qmin": 1,
       "-qmax": 1
     },
-    "image_to_movie": {
+    "images_to_movie": {
       "-f": "mp4",
       "-vcodec": "libx264",
       "-bufsize": "20000k",

@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 
 import os
+import glob
 import json
 import shutil
-import subprocess
-from ffmpeg import Ffmpeg
+from src.ffmpeg import Ffmpeg
+from src.waifu2x import Waifu2x
 
 CONF_FILE_PATH = '..\\config.json'
 
@@ -22,13 +23,20 @@ def rm_dir(path):
         shutil.rmtree(path)
 
 if __name__ == '__main__':
-
     config = read_config(CONF_FILE_PATH)
+
     dirs = config['dirs']
-
-    rm_dir(dirs['tmp'])
-    for dir in dirs.values():
-        mk_dir(dir)
-
     f = Ffmpeg(config['ffmpeg'])
-    f.movie_to_audio(dirs['input'], dirs['audio'])
+    w = Waifu2x(config['waifu2x'])
+
+    files = glob.glob(dirs['input'] + '\\*')
+    for file in files:
+        rm_dir(dirs['tmp'])
+        for dir in dirs.values():
+            mk_dir(dir)
+
+        f.extract_audio(file, dirs['audio'])
+        f.extract_images(file, dirs['img_in'])
+
+        w.convert(dirs['img_in'], dirs['img_out'])
+        f.compose(file, dirs['img_out'], dirs['audio'], dirs['output'])
