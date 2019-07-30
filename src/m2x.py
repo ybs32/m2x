@@ -5,8 +5,8 @@ import os
 import glob
 import json
 import shutil
-from src.ffmpeg import Ffmpeg
-from src.waifu2x import Waifu2x
+from ffmpeg import Ffmpeg
+from waifu2x import Waifu2x
 
 CONF_FILE_PATH = '..\\config.json'
 
