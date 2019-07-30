@@ -7,28 +7,31 @@ import subprocess
 class Waifu2x:
 
     def __init__(self, waifu2x_configs):
-        self.waifu2x_configs = waifu2x_configs
+        self.path = waifu2x_configs['path']
+        self.upscale_configs = waifu2x_configs['upscale']
 
-    def convert(self, input_dir, output_dir):
+    def upscale(self, input_dir, output_dir):
         args = [
             '-i',
             input_dir,
             '-o',
-            output_dir,
-            '--model-dir',
-            self.waifu2x_configs['--model-dir'],
-            '--mode',
-            str(self.waifu2x_configs['--mode']),
-            '--noise-level',
-            str(self.waifu2x_configs['--noise-level']),
-            '--scale-ratio',
-            str(self.waifu2x_configs['--scale-ratio'])
+            output_dir
         ]
+        args.extend(
+            self._read_config(self.upscale_configs)
+        )
         self._execute(args)
+
+    def _read_config(self, configs):
+        args = []
+        for key in configs.keys():
+            args.append(key)
+            args.append(str(configs[key]))
+        return args
 
     def _execute(self, args):
         exec = [
-            self.waifu2x_configs['path']
+            self.path
         ]
         exec.extend(args)
         subprocess.run(exec, shell=True)

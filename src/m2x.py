@@ -5,8 +5,8 @@ import os
 import glob
 import json
 import shutil
-from src.ffmpeg import Ffmpeg
-from src.waifu2x import Waifu2x
+from ffmpeg import Ffmpeg
+from waifu2x import Waifu2x
 
 CONF_FILE_PATH = '..\\config.json'
 
@@ -38,5 +38,5 @@ if __name__ == '__main__':
         f.extract_audio(file, dirs['audio'])
         f.extract_images(file, dirs['img_in'])
 
-        w.convert(dirs['img_in'], dirs['img_out'])
+        w.upscale(dirs['img_in'], dirs['img_out'])
         f.compose(file, dirs['img_out'], dirs['audio'], dirs['output'])
