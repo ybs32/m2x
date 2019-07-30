@@ -13,11 +13,19 @@ Example movie upconverter using waifu2x, ffmpeg.
 * CPU : AMD Ryzen™ 5 2600X   
 * GPU : AMD Radeon™ RX 580 (VRAM 8GB)
 * RAM : 16GB
+* Python 3.7.3
 
 Procesing Speed
+
 | Format | Length | Conversion  | Time   |
 |:-------|:-------|:------------|:-------|
 | mp4    | 60sec  | 480p → 720p | 17m32s |
+
+## Usage
+1. Put a video in "/res/input" folder.
+2. Run "m2x.py" file.
+3. The "res/tmp" folder stores files being processed.
+4. The upconverted video is output to "res/output" folder.
 
 ## Configuration
 * config.json
@@ -29,12 +37,6 @@ Procesing Speed
     ...
 }
 ```
-
-## Usage
-1. Put a video in "/res/input" folder.
-2. Run "m2x.py" file.
-3. The "res/tmp" folder stores files being processed.
-4. The upconverted video is output to "res/output" folder.
 
 ## Need fix
 * Considering frame rate
