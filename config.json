@@ -9,10 +9,12 @@
   },
   "waifu2x": {
     "path": "..\\libs\\waifu2x\\waifu2x.exe",
-    "--model-dir": "..\\libs\\waifu2x\\models",
-    "--mode": "noise-scale",
-    "--noise-level": 2,
-    "--scale-ratio": 2
+    "upscale": {
+      "--model-dir": "..\\libs\\waifu2x\\models",
+      "--mode": "noise-scale",
+      "--noise-level": 2,
+      "--scale-ratio": 2
+    }
   },
   "ffmpeg": {
     "path": "..\\libs\\ffmpeg\\bin\\ffmpeg.exe",
