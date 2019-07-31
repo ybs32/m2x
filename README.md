@@ -1,5 +1,5 @@
 # m2x
-Example movie upconverter using waifu2x, ffmpeg.
+Sample upconverter program using waifu2x, ffmpeg.
 
 ## Dependencies
 
