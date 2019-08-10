@@ -8,19 +8,6 @@ Sample upconverter program using waifu2x, ffmpeg.
 * Python 3<br>
   https://www.python.org/downloads/windows/
 
-## Test environment
-* OS : Windows 10 64bit
-* CPU : AMD Ryzen™ 5 2600X   
-* GPU : AMD Radeon™ RX 580 (VRAM 8GB)
-* RAM : 16GB
-* Python 3.7.3
-
-Procesing Speed
-
-| Format | Length | Conversion  | Time   |
-|:-------|:-------|:------------|:-------|
-| mp4    | 60sec  | 480p → 720p | 17m32s |
-
 ## Usage
 1. Put a video in "/res/input" folder.
 2. Run "m2x.py" file.
@@ -38,9 +25,20 @@ Procesing Speed
 }
 ```
 
-## Need fix
-* Considering frame rate
-* Refactor and comment
+## Test environment
+* OS : Windows 10 64bit
+* CPU : AMD Ryzen™ 5 2600X   
+* GPU : AMD Radeon™ RX 580 (VRAM 8GB)
+* RAM : 16GB
+* Python 3.7.3
+
+Procesing Speed
+
+| Format | Length | Conversion  | Time   |
+|:-------|:-------|:------------|:-------|
+| mp4    | 60sec  | 480p → 720p | 17m32s |
 
 ## Demo
+* Upconvert 240p to 720p
+
 ![Elizabeth](https://raw.githubusercontent.com/ybs32/m2x/images/Elizabeth.jpg)
