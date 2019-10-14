@@ -8,6 +8,7 @@ import shutil
 from ffmpeg import Ffmpeg
 from waifu2x import Waifu2x
 
+
 CONF_FILE_PATH = '..\\config.json'
 
 def read_config(path):
