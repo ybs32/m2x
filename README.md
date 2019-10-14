@@ -39,6 +39,6 @@ Procesing Speed
 | mp4    | 60sec  | 480p → 720p | 17m32s |
 
 ## Demo
-* Upconvert 240p to 720p
+* Upconvert 240p → 720p
 
 ![Elizabeth](https://raw.githubusercontent.com/ybs32/m2x/images/Elizabeth.jpg)
