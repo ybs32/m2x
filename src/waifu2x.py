@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os
-import subprocess
+from module import Module
 
-class Waifu2x:
+
+class Waifu2x(Module):
 
     def __init__(self, waifu2x_configs):
-        self.path = waifu2x_configs['path']
+        super().__init__(waifu2x_configs)
         self.upscale_configs = waifu2x_configs['upscale']
 
     def upscale(self, input_dir, output_dir):
@@ -21,17 +21,3 @@ class Waifu2x:
             self._read_config(self.upscale_configs)
         )
         self._execute(args)
-
-    def _read_config(self, configs):
-        args = []
-        for key in configs.keys():
-            args.append(key)
-            args.append(str(configs[key]))
-        return args
-
-    def _execute(self, args):
-        exec = [
-            self.path
-        ]
-        exec.extend(args)
-        subprocess.run(exec, shell=True)
