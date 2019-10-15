@@ -35,9 +35,11 @@ class Ffmpeg(Module):
         )
         self._execute(args)
 
-    def compose(self, file, image_dir, audio_dir, output_dir):
+    def compose(self, file, fps, image_dir, audio_dir, output_dir):
         self._rename_images(image_dir)
         args = [
+            '-r',
+            fps,
             '-i',
             os.path.join(image_dir, 'img_%07d.png'),
             '-i',

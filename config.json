@@ -32,5 +32,8 @@
       "-maxrate": "25000k",
       "-pix_fmt": "yuv420p"
     }
+  },
+  "ffprobe": {
+    "path": "..\\libs\\ffmpeg\\bin\\ffprobe.exe"
   }
 }
