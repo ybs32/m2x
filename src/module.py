@@ -23,7 +23,7 @@ class Module(object):
         exec.extend(args)
         subprocess.run(exec, shell=True)
 
-    def _executeExt(self, args):
+    def _execute_ret(self, args):
         exec = [
             self.path
         ]
