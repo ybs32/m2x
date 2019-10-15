@@ -19,5 +19,6 @@ class Ffprobe(Module):
         ]
         info = self._executeExt(args)
         info_json = json.loads(info)
-        frame_rate = info_json['streams'][0]['avg_frame_rate'].split('/')[0]
+        avg = info_json['streams'][0]['avg_frame_rate']
+        frame_rate = avg.split('/')[0]
         return frame_rate
