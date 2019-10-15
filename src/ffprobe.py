@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os
-import glob
+import json
 from module import Module
 
 
@@ -11,8 +10,14 @@ class Ffprobe(Module):
     def __init__(self, ffprobe_configs):
         super().__init__(ffprobe_configs)
 
-    def test(self, file):
+    def read_fps(self, file):
         args = [
+            "-show_streams",
+            "-of",
+            "json",
             file
         ]
-        self._execute(args)
+        info = self._executeExt(args)
+        info_json = json.loads(info)
+        frame_rate = info_json['streams'][0]['avg_frame_rate'].split('/')[0]
+        return frame_rate
