@@ -41,6 +41,6 @@ if __name__ == '__main__':
         ffmpeg.extract_audio(file, dirs['audio'])
         ffmpeg.extract_images(file, dirs['img_in'])
 
-        ffprobe.test(file)
+        fps = ffprobe.read_fps(file)
         waifu2x.upscale(dirs['img_in'], dirs['img_out'])
-        ffmpeg.compose(file, dirs['img_out'], dirs['audio'], dirs['output'])
+        ffmpeg.compose(file, fps, dirs['img_out'], dirs['audio'], dirs['output'])
