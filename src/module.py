@@ -22,3 +22,11 @@ class Module(object):
         ]
         exec.extend(args)
         subprocess.run(exec, shell=True)
+
+    def _executeExt(self, args):
+        exec = [
+            self.path
+        ]
+        exec.extend(args)
+        proc = subprocess.run(exec, shell=True, stdout = subprocess.PIPE)
+        return proc.stdout.decode("utf8")
