@@ -6,6 +6,7 @@ import glob
 import json
 import shutil
 from ffmpeg import Ffmpeg
+from ffprobe import Ffprobe
 from waifu2x import Waifu2x
 
 
@@ -27,8 +28,9 @@ if __name__ == '__main__':
     config = read_config(CONF_FILE_PATH)
 
     dirs = config['dirs']
-    f = Ffmpeg(config['ffmpeg'])
-    w = Waifu2x(config['waifu2x'])
+    ffmpeg = Ffmpeg(config['ffmpeg'])
+    ffprobe = Ffprobe(config['ffprobe'])
+    waifu2x = Waifu2x(config['waifu2x'])
 
     files = glob.glob(dirs['input'] + '\\*')
     for file in files:
@@ -36,8 +38,9 @@ if __name__ == '__main__':
         for dir in dirs.values():
             mk_dir(dir)
 
-        f.extract_audio(file, dirs['audio'])
-        f.extract_images(file, dirs['img_in'])
+        ffmpeg.extract_audio(file, dirs['audio'])
+        ffmpeg.extract_images(file, dirs['img_in'])
 
-        w.upscale(dirs['img_in'], dirs['img_out'])
-        f.compose(file, dirs['img_out'], dirs['audio'], dirs['output'])
+        fps = ffprobe.read_fps(file)
+        waifu2x.upscale(dirs['img_in'], dirs['img_out'])
+        ffmpeg.compose(file, fps, dirs['img_out'], dirs['audio'], dirs['output'])
