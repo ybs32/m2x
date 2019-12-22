@@ -10,7 +10,7 @@ from ffprobe import Ffprobe
 from waifu2x import Waifu2x
 
 
-CONF_FILE_PATH = '..\\config.json'
+CONF_FILE_PATH = '..\\config\\config.json'
 
 def read_config(path):
     with open(path, 'r') as config:
