@@ -1,5 +1,5 @@
 # m2x
-Sample upconverter program using waifu2x, ffmpeg.
+Video upconverter using python, waifu2x, ffmpeg.
 
 ## Dependencies
 
@@ -36,7 +36,7 @@ Procesing Speed
 
 | Format | Length | Conversion  | Time   |
 |:-------|:-------|:------------|:-------|
-| mp4    | 60sec  | 480p → 720p | 17m32s |
+| mp4    | 60sec  | 240p → 720p | 36m49s |
 
 ## Demo
 * Upconvert 240p → 720p
